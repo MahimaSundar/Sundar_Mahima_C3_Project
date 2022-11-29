@@ -21,14 +21,16 @@ public class Restaurant {
         //return true;
         int val1 = getCurrentTime().compareTo(openingTime);
         int val2 = getCurrentTime().compareTo(closingTime);
-        if(val1>0 && val2<0)
+        if (val1 > 0 && val2 < 0)
             return true;
-            else
-                return false;
+        else
+            return false;
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     }
 
-    public LocalTime getCurrentTime(){ return  LocalTime.now(); }
+    public LocalTime getCurrentTime() {
+        return LocalTime.now();
+    }
 
     public List<Item> getMenu() {
         //return null;
@@ -36,19 +38,23 @@ public class Restaurant {
         //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
     }
 
-    private Item findItemByName(String itemName){
-        for(Item item: menu) {
-            if(item.getName().equals(itemName))
+    private Item findItemByName(String itemName) {
+        for (Item item : menu) {
+            if (item.getName().equals(itemName))
                 return item;
         }
         return null;
     }
 
+    private int getPrice(Item item) {
+        return item.getPrice();
+    }
+
     public void addToMenu(String name, int price) {
-        Item newItem = new Item(name,price);
+        Item newItem = new Item(name, price);
         menu.add(newItem);
     }
-    
+
     public void removeFromMenu(String itemName) throws itemNotFoundException {
 
         Item itemToBeRemoved = findItemByName(itemName);
@@ -57,12 +63,13 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
-    public void displayDetails(){
-        System.out.println("Restaurant:"+ name + "\n"
-                +"Location:"+ location + "\n"
-                +"Opening time:"+ openingTime +"\n"
-                +"Closing time:"+ closingTime +"\n"
-                +"Menu:"+"\n"+getMenu());
+
+    public void displayDetails() {
+        System.out.println("Restaurant:" + name + "\n"
+                + "Location:" + location + "\n"
+                + "Opening time:" + openingTime + "\n"
+                + "Closing time:" + closingTime + "\n"
+                + "Menu:" + "\n" + getMenu());
 
     }
 
@@ -70,8 +77,7 @@ public class Restaurant {
         return name;
     }
 
-    public Integer getOrderAmount(String items[]){
+    public Integer getOrderAmount(String order_items[]) {
         return null;
     }
-
 }

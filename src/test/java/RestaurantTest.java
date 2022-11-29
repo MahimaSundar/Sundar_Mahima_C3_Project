@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
@@ -64,6 +65,9 @@ class RestaurantTest {
 
     @Test
     public void return_order_value_of_the_given_items(){
+        String[] items = {"Vegetable lasagne","Sweet corn soup"};
+        Integer amount = restaurant.getOrderAmount(items);
+        assertEquals(388,amount);
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
