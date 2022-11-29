@@ -70,4 +70,8 @@ public class Restaurant {
         return name;
     }
 
+    public Integer getOrderAmount(String items[]){
+        return null;
+    }
+
 }
