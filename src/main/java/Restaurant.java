@@ -77,7 +77,13 @@ public class Restaurant {
         return name;
     }
 
-    public Integer getOrderAmount(String order_items[]) {
-        return null;
+    public Integer getOrderAmount(String order_items[]){
+        Integer totalAmount = 0;
+        for(String items :order_items){
+            Item item = findItemByName(items);
+            int price =  getPrice(item);
+            totalAmount = totalAmount + price;
+        }
+        return totalAmount;
     }
 }
